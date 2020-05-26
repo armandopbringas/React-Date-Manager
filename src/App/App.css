@@ -36,7 +36,7 @@ h1, h2  {
 }
 
 label {
-  color: white;
+  color: gray;
 }
 
 input[type="date"],
