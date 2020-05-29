@@ -1,7 +1,7 @@
 import React, {Fragment, useState} from 'react'
 import uuid from 'uuid/dist/v4'
 
-const Form = () => {
+const Form = ({crateDate}) => {
 
     //Creando state de citas
     const [date, setDate] = useState({
@@ -49,11 +49,18 @@ const Form = () => {
         setError(false)
         // Asignar ID
         date.id = uuid()
-        console.log(date)
 
         // Crear cita
+        crateDate(date)
         
-        // Reiniciar formulario
+        // Limpiar formulario al termianr de realizar (siempre con la función modificadora del state).
+        setDate({
+            citado: '',
+            tutor: '',
+            fecha: '',
+            hora: '', 
+            asunto: ''
+        })
     }
 
     return ( 
