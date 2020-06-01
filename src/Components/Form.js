@@ -1,5 +1,6 @@
 import React, {Fragment, useState} from 'react'
 import uuid from 'uuid/dist/v4'
+import PropTypes from 'prop-types'
 
 const Form = ({crateDate}) => {
 
@@ -44,7 +45,7 @@ const Form = ({crateDate}) => {
           ) {
                 setError(true);
                 return;    
-        }
+            }
         //  Eliminando el mensaje de error en caso de ser todo válido.
         setError(false)
         // Asignar ID
@@ -122,6 +123,10 @@ const Form = ({crateDate}) => {
             </form>
         </Fragment>
     );
+}
+
+Form.propTypes = {
+    crateDate: PropTypes.func.isRequired
 }
  
 export default Form;
